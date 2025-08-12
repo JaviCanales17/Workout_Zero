@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_detalle_plan"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/color_purple_gradient_inv"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Plan de Entrenamiento"
+            android:textColor="@color/blue_green"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nombrePlan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Nombre del Plan"
+            android:textColor="@color/blue_green"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/descripcionPlan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción del Plan"
+            android:textColor="@color/blue_green"
+            android:textSize="18sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/duracionPlan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Duración del Plan"
+            android:textColor="@color/blue_green"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/recomendaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/recomendaciones"
+            android:textColor="@color/blue_green"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerEjercicios"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/color_blue1_gradient" />
+
+    <Button
+        android:id="@+id/btnIniciar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginEnd="85dp"
+        android:background="@drawable/color_button_gradient"
+        android:padding="5dp"
+        android:text="Iniciar"
+        android:textColor="@color/blue_green"
+        android:textSize="30sp" />
+</LinearLayout>

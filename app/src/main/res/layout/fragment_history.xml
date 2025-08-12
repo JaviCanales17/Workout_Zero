@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/historyLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Título "Historial" -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/color_purple_gradient_inv"
+        android:padding="15dp"
+        android:text="Historial"
+        android:textAlignment="center"
+        android:textColor="@color/blue_green"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <!-- Calendario -->
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/color_blue1_gradient"
+        app:mcv_showOtherDates="all"
+        app:mcv_firstDayOfWeek="monday"
+        app:mcv_selectionColor="@color/blue3"
+        app:mcv_tileSize="48dp"
+        app:mcv_arrowColor="@color/blue_green"
+        app:mcv_weekDayTextAppearance="@style/CustomWeekDayTextAppearance"
+        app:mcv_dateTextAppearance="@style/TextAppearance.AppCompat.Large"
+        app:mcv_headerTextAppearance="@style/CustomHeaderTextAppearance"/>
+
+    <!-- Texto "Día de Entrenamiento" -->
+    <TextView
+        android:id="@+id/textSelectedDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/color_blue1_gradient"
+        android:text="Día de Entrenamiento"
+        android:layout_marginTop="5dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="@color/blue_green" />
+
+    <!-- RecyclerView donde se mostrarán los CardViews -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewEntrenamientos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp" />
+
+</LinearLayout>
+

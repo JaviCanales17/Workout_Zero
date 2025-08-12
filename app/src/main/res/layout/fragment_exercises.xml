@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+
+
+    <!-- Filtros -->
+    <LinearLayout
+        android:id="@+id/filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="horizontal"
+        android:background="@drawable/color_purple_gradient_inv"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:weightSum="3">
+
+        <!-- Spinner Tipo -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <!-- Texto del Spinner Tipo -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Tipo"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:paddingBottom="5dp"
+                android:gravity="center_horizontal"
+                android:textColor="@color/blue_green"/>
+
+            <Spinner
+                android:id="@+id/spinnerTipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:ellipsize="none"
+                android:background="@drawable/spinner_background" />
+        </LinearLayout>
+
+        <!-- Spinner Dificultad -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <!-- Texto del Spinner Dificultad -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Dificultad"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingBottom="5dp"
+                android:gravity="center"
+                android:textColor="@color/blue_green"/>
+
+            <Spinner
+                android:id="@+id/spinnerDificultad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:ellipsize="none"
+                android:background="@drawable/spinner_background"/>
+        </LinearLayout>
+
+        <!-- Spinner Musculo -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <!-- Texto del Spinner Musculo -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Músculo"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingBottom="5dp"
+                android:gravity="center"
+                android:textColor="@color/blue_green"/>
+
+            <Spinner
+                android:id="@+id/spinnerMusculo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:ellipsize="none"
+                android:background="@drawable/spinner_background"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Paneles con Ejercicios  -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/filter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:padding="8dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

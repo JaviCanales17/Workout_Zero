@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/planesFragment">
+
+    <!-- Fragmento principal -->
+    <fragment
+        android:id="@+id/planesFragment"
+        android:name="com.javiercanales.calistenia.planes.PlanesFragment"
+        android:label="PlanesFragment"
+        tools:layout="@layout/fragment_planes">
+        <action
+            android:id="@+id/actionPlanesToDetallePlan"
+            app:destination="@id/detallePlanFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left">
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/detallePlanFragment"
+        android:name="com.javiercanales.calistenia.planes.DetallePlanFragment"
+        android:label="DetallePlanFragment"
+        tools:layout="@layout/fragment_detalle_plan">
+        <argument
+            android:name="planId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/actionDetallePlanToEntrenamiento"
+            app:destination="@id/entrenamientoFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left">
+            <argument
+                android:name="planId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/entrenamientoFragment"
+        android:name="com.javiercanales.calistenia.planes.EntrenamientoFragment"
+        android:label="EntrenamientoFragment"
+        tools:layout="@layout/fragment_entrenamiento">
+        <argument
+            android:name="ejercicios"
+            app:argType="com.javiercanales.calistenia.sqlite.entities.Ejercicio[]"
+            app:nullable="false" />
+        <argument
+            android:name="planId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/actionEntrenamientoToResumen"
+            app:destination="@id/resumenFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left">
+            <argument
+                android:name="planId"
+                app:argType="integer" />
+            <argument
+                android:name="tiempo_total_real"
+                app:argType="long" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/resumenFragment"
+        android:name="com.javiercanales.calistenia.planes.ResumenFragment"
+        android:label="ResumenFragment"
+        tools:layout="@layout/fragment_resumen">
+        <argument
+            android:name="planId"
+            app:argType="integer" />
+        <argument
+            android:name="tiempo_total_real"
+            app:argType="long" />
+    </fragment>
+
+    <!-- EL BottomNav -->
+    <fragment
+        android:id="@+id/exercisesFragment"
+        android:name="com.javiercanales.calistenia.exercises.ExercisesFragment"
+        android:label="Ejercicios"
+        tools:layout="@layout/fragment_exercises" />
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.javiercanales.calistenia.history.HistoryFragment"
+        android:label="Historial"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.javiercanales.calistenia.profile.ProfileFragment"
+        android:label="Perfil"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

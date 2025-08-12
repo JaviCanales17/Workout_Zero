@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/profileLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/color_blue1_gradient"
+    android:orientation="vertical">
+
+    <!-- Título "Historial" -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/color_purple_gradient_inv"
+        android:padding="15dp"
+        android:text="Perfil"
+        android:textAlignment="center"
+        android:textColor="@color/blue_green"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Nombre -->
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:padding="5dp"
+            android:hint="Nombre"
+            android:enabled="false"
+            android:maxLines="1"
+            android:maxLength="20"/>
+
+        <!-- Género (botones Hombre/Mujer) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Género"
+            android:textSize="18sp"
+            android:padding="5dp"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:id="@+id/layoutGenero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:id="@+id/btnGeneroHombre"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:layout_marginStart="50dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_genero_default"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_male"
+                    android:contentDescription="Símbolo masculino" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hombre"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnGeneroMujer"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="50dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_genero_default"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_female"
+                    android:contentDescription="Símbolo femenino" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mujer"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!-- Estatura (SeekBar) -->
+        <TextView
+            android:id="@+id/tvEstaturaValor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estatura"
+            android:textSize="18sp"
+            android:padding="5dp"
+            android:textColor="@color/black"/>
+
+        <SeekBar
+            android:id="@+id/seekEstatura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="60"
+            android:progressDrawable="@drawable/seekbar_progress"
+            android:thumb="@drawable/seekbar_thumb" /> <!-- De 140 a 200 cm (200 - 140 = 60) -->
+
+        <!-- Peso (SeekBar) -->
+        <TextView
+            android:id="@+id/tvPesoValor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Peso"
+            android:textSize="18sp"
+            android:padding="5dp"
+            android:textColor="@color/black"/>
+
+        <SeekBar
+            android:id="@+id/seekPeso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progressDrawable="@drawable/seekbar_progress"
+            android:thumb="@drawable/seekbar_thumb"/> <!-- De 40 a 140 kg (140 - 40 = 100) -->
+
+
+        <!-- IMC -->
+        <TextView
+            android:id="@+id/tvIMC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IMC"
+            android:textSize="24sp"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <!-- Estado IMC -->
+        <TextView
+            android:id="@+id/tvEstadoIMC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estado"
+            android:textSize="24sp"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginBottom="15dp"/>
+
+        <!-- Botones -->
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/color_button_gradient"
+            android:text="Editar Perfil"
+            android:textSize="24sp"
+            android:textColor="@color/blue_green"/>
+
+        <Button
+            android:id="@+id/btnConfirmar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/color_button_gradient"
+            android:text="Confirmar"
+            android:textSize="24sp"
+            android:textColor="@color/blue_green"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchNotificaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notificaciones de Entrenamiento"
+            android:textSize="21sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:checked="false"
+            android:padding="5dp"
+            android:layout_marginTop="25dp"
+            app:thumbTint="@drawable/mi_color_thumb"
+            app:trackTint="@drawable/mi_color_track" />
+
+        <Button
+            android:id="@+id/btnCerrarSesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cerrar sesión"
+            android:textSize="24sp"
+            android:textColor="@color/blue_green"
+            android:background="@drawable/color_button_gradient"
+            android:layout_marginTop="25dp"
+            android:padding="5dp" />
+
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

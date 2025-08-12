@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Calistenia" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/blue2</item>
+        <item name="colorPrimaryVariant">@color/blue3</item>
+        <item name="colorOnPrimary">@color/purple</item>
+    </style>
+
+    <style name="Theme.Calistenia" parent="Base.Theme.Calistenia">
+
+    </style>
+</resources>

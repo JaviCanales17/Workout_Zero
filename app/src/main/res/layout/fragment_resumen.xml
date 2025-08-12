@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/color_purple_gradient_inv"
+        android:text="Resumen del Entrenamiento"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:padding="15sp"
+        android:textColor="@color/blue_green" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/color_blue1_gradient"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/textNombrePlan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Entrenamiento Finalizado\n¡Enhorabuena!"
+            android:gravity="center"
+            android:textSize="28sp"
+            android:padding="15sp"
+            android:textColor="@color/blue_green"/>
+
+        <TextView
+            android:id="@+id/textDuracion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tiempo Total de Entrenamiento:\n00:00"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            android:textColor="@color/blue_green"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="10sp"/>
+
+        <TextView
+            android:id="@+id/textCalorias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calorías Quemadas:\n0.0 Kcal"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            android:textColor="@color/blue_green"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="10sp"/>
+
+        <Button
+            android:id="@+id/btnFinalizar"
+            android:text="Finalizar"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:textColor="@color/blue_green"
+            android:background="@drawable/color_button_gradient"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
